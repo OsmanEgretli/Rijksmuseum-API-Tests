@@ -1,0 +1,14 @@
+{
+  "reporter": "mochawesome",
+  "reporter-options": {
+    "reportDir": "reports",
+    "reportFilename": "index",
+    "inlineAssets": true,
+    "charts": true,
+    "reportPageTitle": "Rijksmuseum API Test Report",
+    "reportTitle": "Rijksmuseum API Test Results",
+    "reportColor": "#2ecc71",
+    "code": true,
+    "quiet": false
+  }
+} 

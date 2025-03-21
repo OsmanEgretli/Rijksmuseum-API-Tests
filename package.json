@@ -1,0 +1,18 @@
+{
+  "name": "rijksmuseum-api-automation",
+  "version": "1.0.0",
+  "description": "API automation framework for Rijksmuseum API",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "mkdir -p reports",
+    "test": "mocha tests/**/*.test.js --timeout 10000 --reporter mochawesome --reporter-options reportDir=reports,reportFilename=index,inlineAssets=true,charts=true",
+    "test:all": "npm run pretest && npm test"
+  },
+  "dependencies": {
+    "supertest": "^6.3.3",
+    "dotenv": "^16.3.1",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3"
+  }
+} 
