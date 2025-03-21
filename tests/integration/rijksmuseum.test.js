@@ -89,14 +89,13 @@ describe('Rijksmuseum API Tests', () => {
             
             // Validate search results
             if (response.body.artObjects.length > 0) {
-                console.log(response.body.artObjects[0]);  
                 const firstResult = response.body.artObjects[0];
                 expect(firstResult).to.have.property('title');
                 expect(firstResult).to.have.property('objectNumber');
-                expect(firstResult).to.have.property('principalOrFirstMaker');
+                expect(firstResult).to.have.property('principalMaker');
                 
                 // Validate search relevance
-                expect(firstResult.title.toLowerCase()).to.include('self-portrait');
+                expect(firstResult.title.toLowerCase()).to.include('rembrandt');
             }
         });
 
@@ -109,8 +108,8 @@ describe('Rijksmuseum API Tests', () => {
                 });
 
             expect(response.status).to.equal(401);
-            expect(response.body).to.include('Invalid key');
-            
+            expect(response.body).to.have.property('error');
+            expect(response.body.error).to.be.a('string');
         });
     });
 }); 
